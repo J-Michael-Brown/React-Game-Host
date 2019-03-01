@@ -18,7 +18,7 @@ class App extends React.Component {
         <Header/>
         <Switch>
           <Route exact path='/' render={()=><GameList/>}/>
-          <Route path='/play/:gameId' render={()=><PlayGame/>}/>
+          <Route path='/play/:gameId' component={PlayGame}/>
         </Switch>
       </div>
     );

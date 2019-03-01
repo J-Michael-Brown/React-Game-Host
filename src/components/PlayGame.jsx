@@ -1,9 +1,10 @@
 import React from 'react';
 
-function PlayGame(props){
+function PlayGame({match}){
+  console.log(match);
   return(
     <div>
-      PlayGame works!
+      gameId = {match.params.gameId}
     </div>
   )
 }
