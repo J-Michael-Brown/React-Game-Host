@@ -5,6 +5,7 @@ import { AppContainer } from 'react-hot-loader';
 import { HashRouter } from 'react-router-dom';
 
 const render = (Component) => {
+  require("react-hot-loader/patch");
   ReactDOM.render(
     <AppContainer>
       <HashRouter>

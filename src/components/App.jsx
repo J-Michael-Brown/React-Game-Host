@@ -1,8 +1,6 @@
 import React from 'react';
 import Header from './Header';
-/*eslint-disable */
 import { Switch, Route } from 'react-router-dom';
-/*eslint-enable */
 import GameInfoList from '../assets/game-info-list.js';
 import GameList from './GameList'
 
@@ -17,11 +15,10 @@ class App extends React.Component {
     return (
       <div>
         <Header/>
-        <switch>
+        <Switch>
           <Route exact path='/' render={()=><GameList/>}/>
-        </switch>
+        </Switch>
       </div>
-
     );
   }
 }
