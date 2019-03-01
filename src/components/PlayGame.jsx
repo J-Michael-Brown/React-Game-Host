@@ -1,10 +1,16 @@
 import React from 'react';
+import GameList from '../assets/game-list';
+import GameInfoList from '../assets/game-info-list';
 
 function PlayGame({match}){
-  console.log(match);
+  const gameComponent = GameList[match.params.gameId];
+  const gameInfo = GameInfoList[match.params.gameId];
+  const game = Object.assign({},gameComponent,gameInfo);
+  console.log(game);
   return(
     <div>
-      gameId = {match.params.gameId}
+      <p>gameId = {match.params.gameId}</p>
+      {render(game.component)}
     </div>
   )
 }

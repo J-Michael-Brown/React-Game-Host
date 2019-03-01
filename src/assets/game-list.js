@@ -1,4 +1,4 @@
-import Game from '../games/Game';
+import Game from '../games/tic-tac-toe/components/Game';
 
 const GameList = {
   'tic-tac-toe': {
@@ -6,3 +6,5 @@ const GameList = {
     id: 'tic-tac-toe',
   }
 };
+
+export default GameList;
