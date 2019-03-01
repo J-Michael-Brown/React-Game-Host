@@ -1,15 +1,16 @@
-/* eslint-disable */
 import React from 'react';
 import Header from './Header';
+/*eslint-disable */
 import { Switch, Route } from 'react-router-dom';
-import GameInfo from '../assets/portfolio.js';
-/* eslint-enable */
+/*eslint-enable */
+import GameInfoList from '../assets/game-info-list.js';
+import GameList from './GameList'
 
 class App extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {portfolio: GameInfo};
+    this.state = {portfolio: GameInfoList};
   }
 
   render(){
@@ -17,7 +18,7 @@ class App extends React.Component {
       <div>
         <Header/>
         <switch>
-          <Route exact path='/' render={()=><GameList gameList={this.state.gameList}/>}/>
+          <Route exact path='/' render={()=><GameList/>}/>
         </switch>
       </div>
 
