@@ -12,6 +12,7 @@ function GameList(){
         return(
           <GameListGameDisplay
             name={gameInfo.name}
+            gameId={gameInfo.id}
             key={v4()}/>
         )
       })}

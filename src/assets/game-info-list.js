@@ -8,7 +8,7 @@ const GameInfoList = {
       'local pvp',
     ],
     tags: [],
-    gameListId: 'tic-tac-toe',
+    id: 'tic-tac-toe',
   }
 };
 

@@ -2,7 +2,8 @@ import React from 'react';
 import Header from './Header';
 import { Switch, Route } from 'react-router-dom';
 import GameInfoList from '../assets/game-info-list.js';
-import GameList from './GameList'
+import GameList from './GameList';
+import PlayGame from './PlayGame';
 
 class App extends React.Component {
 
@@ -17,6 +18,7 @@ class App extends React.Component {
         <Header/>
         <Switch>
           <Route exact path='/' render={()=><GameList/>}/>
+          <Route path='/play/:gameId' render={()=><PlayGame/>}/>
         </Switch>
       </div>
     );
