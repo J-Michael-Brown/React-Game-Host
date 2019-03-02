@@ -51,6 +51,8 @@ const render = (Component) => {
 ...
 ```
 
+the getElementById was looking for 'react-app-root' but should have looked for 'root'.
+
 The site I visited didn't point out the problem, but it provided a much simpler app which allowed me to figure out the problem with the render.
 
 ### Component Render
