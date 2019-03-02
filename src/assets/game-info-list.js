@@ -7,7 +7,7 @@ const GameInfoList = {
       'strategy',
       'local pvp',
     ],
-    tags: [],
+    tags: ['alpha','battle royal'],
     id: 'tic-tac-toe',
   }
 };
