@@ -10,7 +10,7 @@ function PlayGame({match}){
   return(
     <div>
       <p>gameId = {match.params.gameId}</p>
-      {render(game.component)}
+      {game.component}
     </div>
   )
 }
