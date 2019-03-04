@@ -66,3 +66,7 @@ I, evidently, cannot simply write it as {game.component} in the return of my rea
 i frames to fix problem potentially
 
 import component from GitHub instead of downloading it into my project.
+
+#### Solution
+
+scoping the React.Component in the assets file was what I needed to do, rather than only trying to scope it in the PlayGame Component file, otherwise react doesn't know what I pulled from the assets file.

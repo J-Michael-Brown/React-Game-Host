@@ -1,7 +1,6 @@
 import React from 'react';
 import GameList from '../assets/game-list';
 import GameInfoList from '../assets/game-info-list';
-import Game from '../games/tic-tac-toe/components/Game';
 import {v4} from 'uuid';
 
 function PlayGame({match}){
