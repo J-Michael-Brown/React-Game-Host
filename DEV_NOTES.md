@@ -1,6 +1,8 @@
 ## Note
 
-Project in mid development. Structure will likely change.
+Want to try out pulling React components from GitHub as an import, would be a lot dryer, but require internet connection (and async code).
+
+Need to check out file uploads otherwise, and parsing that info could get messy.
 
 ## Problems
 
