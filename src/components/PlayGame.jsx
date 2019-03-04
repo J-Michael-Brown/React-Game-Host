@@ -28,7 +28,7 @@ function PlayGame({match}){
           )
         })}
       </ul>
-      <Game/>
+      {game.component}
     </div>
   )
 }

@@ -59,7 +59,7 @@ The site I visited didn't point out the problem, but it provided a much simpler 
 
 Within the `<PlayGame/>` I want to render the component from a game component.
 
-I, evidently, cannot simply write it as {game.component} in the return of my react component. I've tried a couple other things but this bug seems to be a little more intensive than a slight syntax error.
+I, evidently, cannot simply write it as {game.component} in the return of my react component. I've tried a couple other things (<{game.component}/>) but this bug seems to be a little more intensive than a slight syntax error.
 
 #### Trying out
 
