@@ -1,9 +1,10 @@
 import React from 'react';
 import GameInfoList from '../assets/game-info-list';
 import GameListGameDisplay from './GameListGameDisplay';
+import PropTypes from 'prop-types';
 import {v4} from 'uuid';
 
-function GameList(){
+function GameList(props){
 
   return(
     <div>
@@ -19,5 +20,15 @@ function GameList(){
     </div>
   )
 }
+
+GameList.propTypes = {
+  gameInfoList: PropTypes.objectOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    developerName: PropTypes.string,
+    categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+    tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+    id: PropTypes.string.isRequired
+  }).isRequired).isRequired
+};
 
 export default GameList;

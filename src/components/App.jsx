@@ -9,7 +9,7 @@ class App extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {portfolio: GameInfoList};
+    this.state = {gameInfoList: GameInfoList};
   }
 
   render(){
@@ -17,7 +17,8 @@ class App extends React.Component {
       <div>
         <Header/>
         <Switch>
-          <Route exact path='/' render={()=><GameList/>}/>
+          <Route exact path='/' render={()=><GameList
+            gameInfoList={this.state.gameInfoList}/>}/>
           <Route path='/play/:gameId' component={PlayGame}/>
         </Switch>
       </div>
