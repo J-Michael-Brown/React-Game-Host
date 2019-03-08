@@ -4,6 +4,10 @@ Want to try out pulling React components from GitHub as an import, would be a lo
 
 Need to check out file uploads otherwise, and parsing that info could get messy.
 
+After looking into flash player, I've come to realize that a great deal of the information about it is out of date, and that many platforms no longer support flash automatically. It is because of flash not being nice to work with even while it is functioning that I have decided that using it would lead to a worse overall user experience.   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I have decided to use iframe components to simply access a deployed site. moving forward, the example will be my intro group project (the only game type of thing I have deployed).    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This will allow me to focus more heavily on the organization of content without spending excess time on getting lost within an outdated framework.
+
 ## Problems
 
 **[HashRouter](#hash-router)**
