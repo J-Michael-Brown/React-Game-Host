@@ -1,20 +1,32 @@
 import React from 'react';
 import Header from './Header';
 import { Switch, Route } from 'react-router-dom';
-import ContentInfoList from '../assets/content-info-list.js';
-import ContentList from './ContentList';
+import ContentInfoListController from './ContentInfoListController';
 import ContentDisplay from './ContentDisplay';
 import NewContentControl from './NewContentControl';
+import {connect} from 'react-redux';
+import {GetContentListActionCreator} from '../actions/index.js';
 
 class App extends React.Component {
 
   constructor(props){
     super(props);
     this.state = {
-      contentInfoList: ContentInfoList,
       admin: false
     };
     this.toggleAdmin = this.toggleAdmin.bind(this);
+    this.handleGetState = this.handleGetState.bind(this);
+  }
+
+  componentDidMount(){
+    this.handleGetState();
+  }
+
+  handleGetState(){
+    const {dispatch} = this.props;
+    const action = GetContentListActionCreator();
+    console.log(action);
+    return dispatch(action);
   }
 
   toggleAdmin(){
@@ -24,6 +36,7 @@ class App extends React.Component {
   }
 
   render(){
+    console.log(this.props);
     let adminStatus = '';
     if(this.state.admin){adminStatus = 'Admin';}
     return (
@@ -31,8 +44,7 @@ class App extends React.Component {
         <Header handleToggleAdmin={this.toggleAdmin}/>
         {adminStatus}
         <Switch>
-          <Route exact path='/' render={()=><ContentList
-            contentInfoList={this.state.contentInfoList}/>}/>
+          <Route exact path='/' render={() => <ContentInfoListController contentInfoList={this.props.contentInfoList}/>}/>
           <Route path='/view/:contentId' component={ContentDisplay}/>
           <Route exact path='/new' render={() => <NewContentControl adminPrivilege={this.state.admin}/>}/>
         </Switch>
@@ -41,4 +53,10 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    contentInfoList: state.contentInfoList
+  }
+}
+
+export default connect(mapStateToProps)(App);
