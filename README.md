@@ -1,6 +1,6 @@
 # React Game Host
 
-_Site to host games, made with React._
+_Site to link to other sites, made with React._
 
 ### Developed By
 J. Michael Brown
@@ -19,7 +19,7 @@ J. Michael Brown
 
 ## Description
 
-{Detailed Description of Application}
+A user should be view a list of any of several windows provided with the site. The user may navigate to a page containing an iframe for that site. They should should be able to suggest a tag for that piece of content. If you use an admin/user upload feature you may add several categories to your content from a predetermined list, and you should be able to manually write in extra tags (like a category, but not significant enough to be on the list) for your piece of content. A user should be able to filter content on display by category, or search by key words to only display content with those in its title and/or tags.
 
 ## Setup and Installation
 Here are some links in case you need information about setup for other operating systems:  
