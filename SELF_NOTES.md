@@ -18,6 +18,33 @@ function Component({match}){
 
 ***this match prop does not exist when using the 'render' parameter.***
 
+## react
+
+To grab the input value you _must_  event.preventDefault _first_.
+
+```js
+...
+handleNewContentFormSubmission({ _contentName, event }){
+  event.preventDefault();
+  _contentName.state.value;
+}
+
+render(){
+  let _contentName = null;
+  return(
+    <div>
+    <form onSubmit={(event)=>{this.handleNewContentFormSubmission({event: event, _contentName: _contentName})}}>
+      <Row>
+        <Input s={12} label="Content Name" ref={(input) => {_contentName = input;}} />
+      </Row>
+      <Button waves='light'>Submit</Button>
+    </form>
+    </div>
+  )
+}
+...
+```
+
 ### react-materialize with create-react-app
 
 More than an yarn add, must add css stylesheet link, and jQuery script etc. to index.html file to work.
