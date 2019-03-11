@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import ContentInfoList from '../assets/content-info-list.js';
 import ContentList from './ContentList';
 import ContentDisplay from './ContentDisplay';
+import NewContentControl from './NewContentControl';
 
 class App extends React.Component {
 
@@ -24,17 +25,17 @@ class App extends React.Component {
 
   render(){
     let adminStatus = '';
-    {if(this.state.admin){adminStatus = 'Admin';}}
+    if(this.state.admin){adminStatus = 'Admin';}
     return (
       <div>
         <Header handleToggleAdmin={this.toggleAdmin}/>
+        {adminStatus}
         <Switch>
           <Route exact path='/' render={()=><ContentList
             contentInfoList={this.state.contentInfoList}/>}/>
           <Route path='/view/:contentId' component={ContentDisplay}/>
-          <Route exact path='/new' render={() => <NewContent />}/>
+          <Route exact path='/new' render={() => <NewContentControl adminPrivilege={this.state.admin}/>}/>
         </Switch>
-        {adminStatus}
       </div>
     );
   }
