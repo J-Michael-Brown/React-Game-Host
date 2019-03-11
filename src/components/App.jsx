@@ -1,15 +1,15 @@
 import React from 'react';
 import Header from './Header';
 import { Switch, Route } from 'react-router-dom';
-import GameInfoList from '../assets/game-info-list.js';
-import GameList from './GameList';
-import PlayGame from './PlayGame';
+import ContentInfoList from '../assets/content-info-list.js';
+import ContentList from './ContentList';
+import ContentDisplay from './ContentDisplay';
 
 class App extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {gameInfoList: GameInfoList};
+    this.state = {contentInfoList: ContentInfoList};
   }
 
   render(){
@@ -17,9 +17,9 @@ class App extends React.Component {
       <div>
         <Header/>
         <Switch>
-          <Route exact path='/' render={()=><GameList
-            gameInfoList={this.state.gameInfoList}/>}/>
-          <Route path='/play/:gameId' component={PlayGame}/>
+          <Route exact path='/' render={()=><ContentList
+            contentInfoList={this.state.contentInfoList}/>}/>
+          <Route path='/view/:contentId' component={ContentDisplay}/>
         </Switch>
       </div>
     );
