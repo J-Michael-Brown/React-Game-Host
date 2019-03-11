@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import {v4} from 'uuid';
 
 function ContentList(props){
-  console.log(props.contentInfoList);
   return(
     <div>
       {Object.keys(props.contentInfoList).map((contentInfoId) => {

@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 function ContentListOverview(props){
   return(
     <div>
-      <Link to={`/play/${props.contentId}`}>{props.name}</Link>
+      <Link to={`/view/${props.contentId}`}>{props.name}</Link>
     </div>
   )
 }
