@@ -12,6 +12,11 @@ After looking into flash player, I've come to realize that a great deal of the i
 
 **[HashRouter](#hash-router)**    
 **[Component Render](#component-render)**
+**[Non Responsive Routing](#non-responsive-routing)**
+
+### Non Responsive Routing
+
+Clicking on a link to switch routes is not working (issue introduced alongside redux implementation).
 
 ### HashRouter
 

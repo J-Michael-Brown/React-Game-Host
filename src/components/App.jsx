@@ -5,7 +5,7 @@ import ContentInfoListController from './ContentInfoListController';
 import ContentDisplay from './ContentDisplay';
 import NewContentControl from './NewContentControl';
 import {connect} from 'react-redux';
-import {GetContentListActionCreator} from '../actions/index.js';
+import types from '../actions/index.js';
 
 class App extends React.Component {
 
@@ -24,7 +24,7 @@ class App extends React.Component {
 
   handleGetState(){
     const {dispatch} = this.props;
-    const action = GetContentListActionCreator();
+    const action = types.GET_CONTENT_LIST();
     return dispatch(action);
   }
 
@@ -35,7 +35,6 @@ class App extends React.Component {
   }
 
   render(){
-    console.log(this.props);
     return (
       <div>
         <Header handleToggleAdmin={this.toggleAdmin} adminStatus={this.state.admin}/>
