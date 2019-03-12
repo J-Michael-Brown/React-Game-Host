@@ -37,15 +37,12 @@ class App extends React.Component {
 
   render(){
     console.log(this.props);
-    let adminStatus = '';
-    if(this.state.admin){adminStatus = 'Admin';}
     return (
       <div>
-        <Header handleToggleAdmin={this.toggleAdmin}/>
-        {adminStatus}
+        <Header handleToggleAdmin={this.toggleAdmin} adminStatus={this.state.admin}/>
         <Switch>
           <Route exact path='/' render={() => <ContentInfoListController contentInfoList={this.props.contentInfoList}/>}/>
-          <Route path='/view/:contentId' component={ContentDisplay}/>
+          <Route exact path='/view/:contentId' component={ContentDisplay}/>
           <Route exact path='/new' render={() => <NewContentControl adminPrivilege={this.state.admin}/>}/>
         </Switch>
       </div>

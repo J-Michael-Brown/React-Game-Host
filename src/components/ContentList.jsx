@@ -1,13 +1,13 @@
 import React from 'react';
 import ContentListOverview from './ContentListOverview';
 import PropTypes from 'prop-types';
-import {v4} from 'uuid';
-import {Collection} from 'react-materialize';
+import { v4 } from 'uuid';
+import { Row } from 'react-materialize';
 
 function ContentList(props){
   return(
     <div>
-      <Collection>
+      <Row>
         {Object.keys(props.contentInfoList).map((contentInfoId) => {
           let contentInfo = props.contentInfoList[contentInfoId];
           return(
@@ -17,7 +17,7 @@ function ContentList(props){
               key={v4()}/>
           )
         })}
-      </Collection>
+      </Row>
     </div>
   )
 }

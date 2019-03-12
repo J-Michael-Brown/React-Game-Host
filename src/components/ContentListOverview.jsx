@@ -1,12 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
-import {CollectionItem} from 'react-materialize';
+import { Col, Card } from 'react-materialize';
 
 function ContentListOverview(props){
   return(
     <div>
-      <Link to={`/view/${props.contentId}`}><CollectionItem href='#'>{props.name}</CollectionItem></Link>
+      <Col m={6} s={12}>
+      <Link to={`/view/${props.contentId}`}>
+        <Card className='blue-grey darken-1' textClassName='white-text' title={props.name}>
+        </Card>
+        </Link>
+      </Col>
     </div>
   )
 }

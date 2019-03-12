@@ -1,11 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { Navbar, NavItem, Icon } from 'react-materialize';
 
 function Header(props){
+  let privileges = '';
+  if(props.adminStatus){privileges='Admin';}
   return (
     <div>
-      <h1>Title Spot</h1>
-      <button onClick={()=>props.handleToggleAdmin()}>Admin</button> <Link to='/'>Home</Link> | <Link to='/new'>Submit New [Content]</Link>
+    <Navbar brand={privileges} right>
+      <li><NavLink to='/'><Icon>view_module</Icon></NavLink></li>
+      <li><NavLink to='/new'><Icon>archive</Icon></NavLink></li>
+      <NavItem onClick={()=>props.handleToggleAdmin()}>Admin</NavItem>
+    </Navbar>
+
     </div>
   );
 }
