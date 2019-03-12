@@ -2,12 +2,37 @@
 
 Every iframe needs a title attribute supplied to it, this is a required plugin.
 
+### redux
+
+rootReducer wants to have returns that are _just the **value** you are changing_ (not even the key)
+
+```js
+//reducer should look like this
+function contentInfoListReducer(state = {}, action){
+  let newContentInfoList;
+  switch (action.type) {
+    case 'GET_CONTENT_LIST':
+      newContentInfoList = action.contentInfoList;
+      return newContentInfoList; // returning only the value
+    default:
+      return state;
+  }
+}
+```
+
+```js
+//notice how we set the contentInfoList property to the reducer
+const rootReducer = combineReducers({
+  contentInfoList: contentInfoListReducer
+});
+```
+
 ### react-router
 
 There is a hidden 'match' parameter passed through props when using a component render
 
 ```js
-<Route path='/:id' component={Component}/>
+<Route exact path='/:id' component={Component}/>
 //follow link to '/bonobo'
 ...
 function Component({match}){
