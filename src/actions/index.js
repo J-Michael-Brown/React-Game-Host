@@ -1,10 +1,2 @@
-import ContentInfoList from '../assets/content-info-list';
-
-function GetContentListActionCreator(){
-  return{
-    type: 'GET_CONTENT_LIST',
-    contentInfoList: ContentInfoList
-  }
-}
-
-export {GetContentListActionCreator};
+import * as types from './ActionTypes';
+export default types;

@@ -25,7 +25,6 @@ class App extends React.Component {
   handleGetState(){
     const {dispatch} = this.props;
     const action = GetContentListActionCreator();
-    console.log(action);
     return dispatch(action);
   }
 
