@@ -18,6 +18,14 @@ After looking into flash player, I've come to realize that a great deal of the i
 
 Clicking on a link to switch routes is not working (issue introduced alongside redux implementation).
 
+#### Solution
+
+Wrapping the export connection within the withRouter function
+
+```js
+export default withRouter(connect(mapStateToProps)(App));
+```
+
 ### HashRouter
 
 `<HashRouter></HashRouter>` not being recognized

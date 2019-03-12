@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import ContentInfoListController from './ContentInfoListController';
 import ContentDisplay from './ContentDisplay';
 import NewContentControl from './NewContentControl';
@@ -54,4 +54,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(App);
+export default withRouter(connect(mapStateToProps)(App));

@@ -26,6 +26,15 @@ const rootReducer = combineReducers({
   contentInfoList: contentInfoListReducer
 });
 ```
+---
+
+to route normally with react-router, you need only the Router component (HashRouter in this case) and the `<Switch><Route/></Switch>`. **But** once you introduce redux into the application, the component(s) containing the Route list need to be exported with router
+
+```js
+export default withRouter(connect(mapStateToProps)(App));
+```
+
+without this code the page will be unresponsive to route links using any of the Link type of components from the react-router-dom library.
 
 ### react-router
 
